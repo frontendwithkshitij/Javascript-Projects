@@ -131,6 +131,7 @@ if(localStorage.getItem('tasks') === null){
 
 
 
+
 let toastElement = null;
 
 function Toaster(message, className) {
@@ -143,18 +144,41 @@ function Toaster(message, className) {
 
     const div = document.createElement('div');
     
-    div.innerHTML = message;
+    // Add cross icon
+    const crossIcon = document.createElement('span');
+    crossIcon.innerHTML = '<i class="fa fa-remove" style="margin-right:10px;font-size:17px"></i>'; // or use an icon from a library like FontAwesome
+    crossIcon.style.cursor = 'pointer';
+    crossIcon.onclick = () => {
+        toastElement.innerHTML = '';
+        toastElement.className = '';
+        const overlay = document.getElementById('overlay');
+        if (overlay) {
+            overlay.style.display = "none";
+        }
+    };
+
+    div.appendChild(crossIcon);
+    
+    const messageSpan = document.createElement('span');
+    messageSpan.innerHTML = message;
+    div.appendChild(messageSpan);
+
     toastElement.appendChild(div);
-    if(className == 'error'){
-   const overlay = document.getElementById('overlay')
-    overlay.style.display = "block" 
+
+    if (className == 'error') {
+        const overlay = document.getElementById('overlay');
+        if (overlay) {
+            overlay.style.display = "block";
+        }
     }
 
     // Remove the toast after 3 seconds
-    
     setTimeout(() => {
         toastElement.innerHTML = '';
         toastElement.className = '';
-        overlay.style.display = "none"
-    }, 2000)
-   }
+        const overlay = document.getElementById('overlay');
+        if (overlay) {
+            overlay.style.display = "none";
+        }
+    }, 2000);
+}
