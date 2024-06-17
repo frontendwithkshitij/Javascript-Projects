@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+    crossorigin="anonymous">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+<title>DOM Tasklist</title>
+<link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <div id="overlay"></div>
+
+    <div class="container">
+        <div class="tasklist-container">
+            <h3>Task List</h3>
+           <form action="" id="task-form">
+            <div class="list-input">
+                 <div class="inputBox">
+                   <input type="text" name="" id="taskInput" placeholder="Add Task">
+               </div>
+               <button class="task-btn" >Add Task</button>
+            </div>
+            </form>
+            <div class="tasks">
+                <h3>Tasks</h3>
+                <div class="list-tasks-container">
+                <div class="filter">
+                   <input type="text" placeholder="Filter tasks"  required="required" id="filterTasks">
+               </div>
+               <p id="output"></p>
+                    <ul class="taskList">
+                    
+                     
+                    </ul>
+                </div>
+            </div>
+         <div class="filter-container">
+         <button class="clear-allbtn" type="submit">Clear All Tasks</button>
+
+         </div>
+        </div>
+    </div>
+        <script src="./js/script.js"></script>
+
+</body>
+</html>
